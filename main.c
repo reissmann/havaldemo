@@ -11,17 +11,17 @@
 int main(void) {
   sph_haval_context *ctx;
 
-	char data[] = "test";			// the data to hash
-	char out[128];						// the final output
+  char data[] = "test";     // the data to hash
+  char out[128];            // the final output
 
-	ctx = (sph_haval_context *) malloc(sizeof(sph_haval_context));
-	sph_haval128_3_init(ctx);
-	sph_haval128_3(ctx, data, sizeof(data) * sizeof(char));
+  ctx = (sph_haval_context *) malloc(sizeof(sph_haval_context));
+  sph_haval128_3_init(ctx);
+  sph_haval128_3(ctx, data, sizeof(data) * sizeof(char));
   sph_haval128_3_close(ctx, out);
   free(ctx);
 
-	printf("%s\n", out);
+  printf("%s\n", out);
 
-	return 0;
+  return 0;
 }
 
